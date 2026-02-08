@@ -147,7 +147,8 @@
   .btn-primary {
     @apply relative overflow-hidden bg-primary text-primary-foreground px-8 py-4 rounded-xl font-medium;
     @apply transition-all duration-300 ease-out;
-    @apply hover: shadow-lg hover:-translate-y-0.5;
+    @apply hover:shadow-lg;
+      @apply hover:-translate-y-0.5;
     box-shadow: var(--shadow-gold);
   }
 
@@ -164,14 +165,17 @@
   .btn-outline-gold {
     @apply border-2 border-primary text-primary px-8 py-4 rounded-xl font-medium;
     @apply transition-all duration-300 ease-out bg-transparent;
-    @apply hover: bg-primary hover:text-primary-foreground hover:-translate-y-0.5;
+    @apply hover:bg-primary;
+      @apply hover:text-primary-foreground;
+      @apply hover:-translate-y-0.5;
   }
 
   /* Treatment card hover */
   .treatment-card {
-    @apply bg-card rounded-2xl p-6 transition-all duration-400 ease-out cursor-pointer;
-    @apply border border-transparent hover: border-primary/20;
-    @apply hover: -translate-y-2;
+    @apply bg-card rounded-2xl p-6 transition-all duration-500 ease-out cursor-pointer;
+      @apply border border-transparent;
+      @apply hover:border-primary/20;
+      @apply hover:-translate-y-2;
     box-shadow: var(--shadow-soft);
   }
 
@@ -181,7 +185,7 @@
 
   /* Section spacing */
   .section-padding {
-    @apply py-20 md: py-28 lg:py-32 px-4 md:px-8;
+    @apply py-20 md:py-28 lg:py-32 px-4 md:px-8;
   }
 
   /* Parallax container */
@@ -192,7 +196,7 @@
   /* Floating WhatsApp button */
   .whatsapp-float {
     @apply fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full;
-    @apply shadow-lg transition-all duration-300 hover: scale-110 hover:shadow-xl;
+    @apply shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl;
     animation: pulse-whatsapp 2s infinite;
   }
 
@@ -305,9 +309,15 @@
   }
 
   /* Gradient text */
-  .text-gradient-gold {
-    @apply bg-gradient-to-r from-primary via-[hsl(38, 60%, 55%)] to-primary bg-clip-text text-transparent;
-  }
+    .text-gradient-gold {
+      background-image: linear-gradient(to right,
+          hsl(var(--primary)),
+          hsl(38 60% 55%),
+          hsl(var(--primary)));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
   /* Divider with gold accent */
   .divider-gold {

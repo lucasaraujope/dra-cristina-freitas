@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import { useInView } from '@/hooks/useInView';
 import { MapPin } from 'lucide-react';
-import heroImage from '@/assets/hero-dental-clinic.jpg';
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -20,7 +19,7 @@ const HeroSection = () => {
       {/* Background Image with Parallax */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: `url(${heroImage})` }}
+        
       />
       
       {/* Gradient Overlay */}
